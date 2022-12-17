@@ -33,12 +33,6 @@
             </ul>
         </div>
     </div>
-    <div class="footer_bottom"></div>
+    <!-- <div class="footer_bottom"></div> -->
 </footer>
 
-<div class="btn-top"><img src="./public/img/arrow-top.svg" alt=""></div>
-
-<div class="fixed-btn">
-    <a href="" class="btn-order"><img src="./public/img/here.svg" alt=""><span>線上<br class="d-sm-none">訂餐</span></a>
-    <a href=""><span>完整<br class="d-sm-none">菜單</span></a>
-</div>

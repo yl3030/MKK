@@ -8,3 +8,7 @@ $(".header_menu").click(function(){
 $(".btn-top").click(function(){
     $("html, body").animate({scrollTop: 0}, 300);
 })
+
+$(window).on("resize scroll",function(){
+    console.log($(window).scrollTop());
+})

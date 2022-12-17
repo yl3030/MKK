@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <?php include("./include/meta") ?>
+    <?php include("./include/meta.php") ?>
 </head>
 <body>
-    <?php include("./include/header") ?>
+    <?php include("./include/header.php") ?>
     <main>
         <div class="banner">
             <div class="swiper-container banner_slider">
@@ -42,12 +42,10 @@
         </div>
 
         <div class="recc">
-            <img src="./public/img/smoke-1.png" alt="" class="smoke smoke-1">
-            <img src="./public/img/smoke-1.png" alt="" class="smoke smoke-2">
-            <img src="./public/img/smoke-1.png" alt="" class="smoke smoke-3">
-            <img src="./public/img/smoke-2.png" alt="" class="smoke smoke-4">
-            <img src="./public/img/smoke-2.png" alt="" class="smoke smoke-5">
-            <img src="./public/img/smoke-2.png" alt="" class="smoke smoke-6">
+            <img src="./public/img/smoke-1.png" alt="" class="smoke smoke-1" data-1100="filter: blur(0px);transform: translateX(0px) translateY(0px); opacity: 1;" data-1400="filter: blur(5px);transform: translateX(104px) translateY(-52px); opacity: 0;">
+            <img src="./public/img/smoke-5.png" alt="" class="smoke smoke-5" data-1100="filter: blur(0px);transform: translateX(0px) translateY(0px); opacity: 1;" data-1400="filter: blur(5px);transform: translateX(104px) translateY(-52px); opacity: 0;">
+            <img src="./public/img/smoke-6.png" alt="" class="smoke smoke-6" data-1100="filter: blur(0px);transform: translateX(0px) translateY(0px); opacity: 1;" data-1400="filter: blur(5px);transform: translateX(104px) translateY(-52px); opacity: 0;">
+            <img src="./public/img/smoke-2.png" alt="" class="smoke smoke-2" data-1100="filter: blur(0px);transform: translateX(0px) translateY(0px); opacity: 1;" data-1400="filter: blur(5px);transform: translateX(104px) translateY(-52px); opacity: 0;">
             <div class="title">
                 <img src="./public/img/title-reccomend.svg" alt="人氣推薦">
                 <h2>Top Recommendations</h2>
@@ -55,25 +53,51 @@
             <div class="recc_inner">
                 <div class="recc_slider-box">
                     <div class="recc_slider d-flex justify-content-center">
-                        <ul>
-                            <li style="--li-no:1;" class="recc_slider_item">
-                                <a href=""><img style="--img-no:-1;" src="./public/img/product-1.png" alt=""></a>
+                        <ul id="wheel">
+                            <li data-index="0" data-intro="#intro2" class="recc_slider_item last">
+                                <a href="">
+                                    <img class="recc_slider_img" src="" alt="">
+                                </a>
                             </li>
-                            <li style="--li-no:2;" class="recc_slider_item"><a href=""><img style="--img-no:-2;" src="./public/img/product-2.png" alt=""></a></li>
-                            <li style="--li-no:3;" class="recc_slider_item active"><a href=""><img style="--img-no:-3;" src="./public/img/product-3.png" alt=""></a></li>
-                            <li style="--li-no:4;" class="recc_slider_item"><a href=""><img style="--img-no:-4;" src="./public/img/product-4.png" alt=""></a></li>
-                            <li style="--li-no:5;" class="recc_slider_item"><a href=""><img style="--img-no:-5;" src="./public/img/product-5.png" alt=""></a></li>
-                            <li style="--li-no:6;" class="recc_slider_item"><a href=""><img style="--img-no:-6;" src="./public/img/product-1.png" alt=""></a></li>
-                            <li style="--li-no:7;" class="recc_slider_item"><a href=""><img style="--img-no:-7;" src="./public/img/product-2.png" alt=""></a></li>
-                            <li style="--li-no:8;" class="recc_slider_item"><a href=""><img style="--img-no:-8;" src="./public/img/product-3.png" alt=""></a></li>
-                            <li style="--li-no:9;" class="recc_slider_item"><a href=""><img style="--img-no:-9;" src="./public/img/product-4.png" alt=""></a></li>
-                            <li style="--li-no:10;" class="recc_slider_item"><a href=""><img style="--img-no:-10;" src="./public/img/product-5.png" alt=""></a></li>
-                            <li style="--li-no:11;" class="recc_slider_item"><a href=""><img style="--img-no:-11;" src="./public/img/product-1.png" alt=""></a></li>
-                            <li style="--li-no:12;" class="recc_slider_item"><a href=""><img style="--img-no:-12;" src="./public/img/product-2.png" alt=""></a></li>
+                            <li data-index="1" data-intro="#intro1" class="recc_slider_item">
+                                <a href="http://www.obiz.com.tw/">
+                                    <img class="recc_slider_img" src="./public/img/product-2.png" alt="">
+                                </a>
+                            </li>
+                            <li data-index="2" data-intro="#intro2" class="recc_slider_item">
+                                <a href="">
+                                    <img class="recc_slider_img" src="./public/img/product-3.png" alt="">
+                                </a>
+                            </li>
+                            <li data-index="3" data-intro="#intro3" class="recc_slider_item active">
+                                <a href="">
+                                    <img class="recc_slider_img" src="./public/img/product-5.png" alt="">
+                                </a>
+                            </li>
+                            <li data-index="4" data-intro="#intro4" class="recc_slider_item">
+                                <a href="">
+                                    <img class="recc_slider_img" src="./public/img/product-4.png" alt="">
+                                </a>
+                            </li>
+                            <li data-index="5" data-intro="#intro5" class="recc_slider_item">
+                                <a href="">
+                                    <img class="recc_slider_img" src="./public/img/product-1.png" alt="">
+                                </a>
+                            </li>
+                            <li data-index="6" data-intro="#intro6" class="recc_slider_item last">
+                                <a href="">
+                                    <img class="recc_slider_img" src="./public/img/noodle.svg" alt="">
+                                </a>
+                            </li>
+                            <li data-index="7" data-intro="#intro1" class="recc_slider_item last">
+                                <a href="">
+                                    <img class="recc_slider_img" src="" alt="">
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <ul class="recc_intro">
-                        <li class="recc_intro_item">
+                        <li class="recc_intro_item" id="intro1">
                             <div class="recc_intro_title">
                                 <h3>招牌豚骨拉麵</h3>
                             </div>
@@ -83,7 +107,7 @@
                                 香氣撲鼻，美味無雙，初訪必點。
                             </p>
                         </li>
-                        <li class="recc_intro_item">
+                        <li class="recc_intro_item" id="intro2">
                             <div class="recc_intro_title">
                                 <h3>招牌豚骨拉麵2</h3>
                             </div>
@@ -93,7 +117,7 @@
                                 香氣撲鼻，美味無雙，初訪必點。
                             </p>
                         </li>
-                        <li class="recc_intro_item active">
+                        <li class="recc_intro_item active" id="intro3">
                             <div class="recc_intro_title">
                                 <h3>招牌豚骨拉麵3</h3>
                             </div>
@@ -103,7 +127,7 @@
                                 香氣撲鼻，美味無雙，初訪必點。
                             </p>
                         </li>
-                        <li class="recc_intro_item">
+                        <li class="recc_intro_item" id="intro4">
                             <div class="recc_intro_title">
                                 <h3>招牌豚骨拉麵4</h3>
                             </div>
@@ -113,7 +137,7 @@
                                 香氣撲鼻，美味無雙，初訪必點。
                             </p>
                         </li>
-                        <li class="recc_intro_item">
+                        <li class="recc_intro_item" id="intro5">
                             <div class="recc_intro_title">
                                 <h3>招牌豚骨拉麵5</h3>
                             </div>
@@ -123,69 +147,9 @@
                                 香氣撲鼻，美味無雙，初訪必點。
                             </p>
                         </li>
-                        <li class="recc_intro_item">
+                        <li class="recc_intro_item" id="intro6">
                             <div class="recc_intro_title">
                                 <h3>招牌豚骨拉麵6</h3>
-                            </div>
-                            <p>
-                                豬大骨湯底，透著淡淡的牡蠣白，營養不油膩；<br>
-                                搭配武火炙燒的叉燒肉，<br>
-                                香氣撲鼻，美味無雙，初訪必點。
-                            </p>
-                        </li>
-                        <li class="recc_intro_item">
-                            <div class="recc_intro_title">
-                                <h3>招牌豚骨拉麵7</h3>
-                            </div>
-                            <p>
-                                豬大骨湯底，透著淡淡的牡蠣白，營養不油膩；<br>
-                                搭配武火炙燒的叉燒肉，<br>
-                                香氣撲鼻，美味無雙，初訪必點。
-                            </p>
-                        </li>
-                        <li class="recc_intro_item">
-                            <div class="recc_intro_title">
-                                <h3>招牌豚骨拉麵8</h3>
-                            </div>
-                            <p>
-                                豬大骨湯底，透著淡淡的牡蠣白，營養不油膩；<br>
-                                搭配武火炙燒的叉燒肉，<br>
-                                香氣撲鼻，美味無雙，初訪必點。
-                            </p>
-                        </li>
-                        <li class="recc_intro_item">
-                            <div class="recc_intro_title">
-                                <h3>招牌豚骨拉麵9</h3>
-                            </div>
-                            <p>
-                                豬大骨湯底，透著淡淡的牡蠣白，營養不油膩；<br>
-                                搭配武火炙燒的叉燒肉，<br>
-                                香氣撲鼻，美味無雙，初訪必點。
-                            </p>
-                        </li>
-                        <li class="recc_intro_item">
-                            <div class="recc_intro_title">
-                                <h3>招牌豚骨拉麵10</h3>
-                            </div>
-                            <p>
-                                豬大骨湯底，透著淡淡的牡蠣白，營養不油膩；<br>
-                                搭配武火炙燒的叉燒肉，<br>
-                                香氣撲鼻，美味無雙，初訪必點。
-                            </p>
-                        </li>
-                        <li class="recc_intro_item">
-                            <div class="recc_intro_title">
-                                <h3>招牌豚骨拉麵11</h3>
-                            </div>
-                            <p>
-                                豬大骨湯底，透著淡淡的牡蠣白，營養不油膩；<br>
-                                搭配武火炙燒的叉燒肉，<br>
-                                香氣撲鼻，美味無雙，初訪必點。
-                            </p>
-                        </li>
-                        <li class="recc_intro_item">
-                            <div class="recc_intro_title">
-                                <h3>招牌豚骨拉麵12</h3>
                             </div>
                             <p>
                                 豬大骨湯底，透著淡淡的牡蠣白，營養不油膩；<br>
@@ -196,9 +160,12 @@
                     </ul>
                     <img class="flavor" src="./public/img/flavor.svg" alt="">
                 </div>
-                <div class="slider-arrow-next slider-arrow"><img src="./public/img/slider-arrow-next.svg" alt=""></div>
-                <div class="slider-arrow-prev slider-arrow"><img src="./public/img/slider-arrow-prev.svg" alt=""></div>
             </div>
+            <img src="./public/img/smoke-4.png" alt="" class="smoke smoke-4" data-1100="filter: blur(0px);transform: translateX(0px) translateY(0px); opacity: 1;" data-1400="filter: blur(5px);transform: translateX(-104px) translateY(-52px); opacity: 0;">
+            <img src="./public/img/smoke-3.png" alt="" class="smoke smoke-3" data-1100="filter: blur(2px);transform: translateX(0px) translateY(0px); opacity: 0.7;" data-1400="filter: blur(7px);transform: translateX(0px) translateY(-52px); opacity: 0;">
+            <img src="./public/img/smoke-7.png" alt="" class="smoke smoke-7" data-1100="filter: blur(2px);transform: translateX(0px) translateY(0px); opacity: 0.7;" data-1400="filter: blur(7px);transform: translateX(-104px) translateY(-52px); opacity: 0;">
+            <div class="slider-arrow-next slider-arrow"><img src="./public/img/slider-arrow-next.svg" alt=""></div>
+            <div class="slider-arrow-prev slider-arrow"><img src="./public/img/slider-arrow-prev.svg" alt=""></div>
         </div>
 
         <div class="news">
@@ -253,54 +220,266 @@
         </div>
 
     </main>
-    <?php include("./include/footer") ?>
-    <?php include("./include/script") ?>
+    <?php include("./include/footer.php") ?>
+    <?php include("./include/script.php") ?>
     <script>
-        let indexUnit = 0;
+        // 滾動
+        var skrollr_obj = skrollr.init();
+        // 預設
+        let range = 80;
+        let rotateUnit = range / 6;
+        let rotateOffset = 90 - (range / 2);
+        const activeIndex = 3;
+        let deg, reverse;
+        let Firstimg, FirstLink, FirstMark;
+        function reccSliderItem(){
+            if($(window).width()>991){
+                range = 80;
+            }else if($(window).width()>575) {
+                range = 130;
+            }else {
+                range = 320;
+            }
+            rotateUnit = range / 6;
+            rotateOffset = 90 - (range / 2);
+            $(".recc_slider_item").each(function(){
+                let index = $(this).attr("data-index");
+                deg = rotateUnit * index + rotateOffset;
+                reverse = rotateUnit * index * (-1) - rotateOffset;
+                $(this).css("transform","rotateZ(" + deg + "deg)");
+                $(this).find(".recc_slider_img").css("transform","rotateZ(" + reverse + "deg)");
+                if(index == 1){
+                    Firstimg = $(this).find(".recc_slider_img").attr("src");
+                    FirstLink = $(this).find("a").attr("href");
+                    FirstMark = $(this).find(".mark").text();
+                }
+            })
+            $(".recc_slider_item[data-index='7']").find(".recc_slider_img").attr("src",Firstimg);
+            $(".recc_slider_item[data-index='7']").find("a").attr("href",FirstLink);
+            if($(window).width()>991) {
+                $(".recc_slider_item").removeClass("last");
+                $(".recc_slider_item[data-index='0'],.recc_slider_item[data-index='6'],.recc_slider_item[data-index='7']").addClass("last");
+            }else if($(window).width()>575) {
+                $(".recc_slider_item").removeClass("last");
+                $(".recc_slider_item[data-index='0'],.recc_slider_item[data-index='1'],.recc_slider_item[data-index='5'],.recc_slider_item[data-index='6'],.recc_slider_item[data-index='7']").addClass("last");
+            }else {
+                $(".recc_slider_item").addClass("last");
+                $(".recc_slider_item[data-index='" + activeIndex + "']").removeClass("last");
+            }
+            $(".recc_slider_item[data-index='" + activeIndex + "']").addClass("active");
+        };
+        reccSliderItem();
+        // Range();
+        $(window).on("resize scroll",function(){
+            // Range();
+            reccSliderItem();
+        })
+
+        // 點選箭頭
         $(".slider-arrow").click(function(){
-            let num = $(".recc_slider_item").length;
-            let rotate = 360 / 12;
-            let index;
-            let activeIndex;
+            let length = $(".recc_slider_item").length - 1;
+            let newIndex, thisIndex;
             if($(this).hasClass("slider-arrow-next")){
+                let Secondimg = $(".recc_slider_item[data-index='2']").find(".recc_slider_img").attr("src");
+                let SecondLink = $(".recc_slider_item[data-index='2']").find("a").attr("href");  
+                let SecondIntro = $(".recc_slider_item[data-index='2']").attr("data-intro");
+                $(".recc_slider_item[data-index='0']").find(".recc_slider_img").attr("src",Secondimg);
+                $(".recc_slider_item[data-index='0']").find("a").attr("href",SecondLink);  
+                $(".recc_slider_item[data-index='0']").attr("data-intro",SecondIntro);
                 $(".recc_slider_item").each(function(){
-                    index = indexUnit + $(this).index() + 1;
-                    let deg = 360 / 12 * index - rotate;
-                    $(this).css("transform","rotateZ(" + deg + "deg)");
-                    $(this).find("img").css("transform","rotateZ(" + (deg * (-1)) + "deg)");
-                    if($(this).hasClass("active")) {
-                        activeIndex = $(this).index() + 1;
-                        if( activeIndex >= num) {
-                            activeIndex = 0;
-                        }else {
-                            activeIndex = activeIndex;
+                    thisIndex = parseInt($(this).attr("data-index"));
+                    if(thisIndex == 0){
+                        newIndex = length;
+                    }else {
+                        newIndex = thisIndex - 1;
+                    }
+
+                    if($(window).width()>991){
+                        if(thisIndex == 1) {
+                            $(this).addClass("last");
+                        }else if(thisIndex == 6) {
+                            $(this).removeClass("last");
+                        }
+                    }else if($(window).width()>575){
+                        if(thisIndex == 2) {
+                            $(this).addClass("last");
+                        }else if(thisIndex == 5) {
+                            $(this).removeClass("last");
+                        }
+                    }else {
+                        if(thisIndex == 3) {
+                            $(this).addClass("last");
+                        }else if(thisIndex == 4) {
+                            $(this).removeClass("last");
                         }
                     }
-                })
-                indexUnit = indexUnit - 1;
-                $(".recc_slider_item").eq(activeIndex).addClass("active").siblings(".recc_slider_item").removeClass("active");
-                $(".recc_intro_item").eq(activeIndex).addClass("active").siblings(".recc_intro_item").removeClass("active");
-            }
-            if($(this).hasClass("slider-arrow-prev")){
-                $(".recc_slider_item").each(function(){
-                    index = indexUnit + $(this).index() + 1;
-                    let deg = 360 / 12 * index + rotate;
+
+                    if($(this).hasClass("active")){
+                        $(this).removeClass("active");
+                    }
+
+                    $(this).attr("data-index",newIndex);
+                    deg = rotateUnit * newIndex + rotateOffset;
+                    reverse = rotateUnit * newIndex * (-1) - rotateOffset;
                     $(this).css("transform","rotateZ(" + deg + "deg)");
-                    $(this).find("img").css("transform","rotateZ(" + (deg * (-1)) + "deg)");
-                    if($(this).hasClass("active")) {
-                        activeIndex = $(this).index() + 1;
-                        if( activeIndex <= 1) {
-                            activeIndex = num;
+                    $(this).find(".recc_slider_img").css("transform","rotateZ(" + reverse + "deg)");
+                })  
+            }else if($(this).hasClass("slider-arrow-prev")){
+                let Sixthimg = $(".recc_slider_item[data-index='6']").find(".recc_slider_img").attr("src");
+                let SixthLink = $(".recc_slider_item[data-index='6']").find("a").attr("href");  
+                let SixthIntro = $(".recc_slider_item[data-index='6']").attr("data-intro");
+                $(".recc_slider_item[data-index='0']").find(".recc_slider_img").attr("src",Sixthimg);
+                $(".recc_slider_item[data-index='0']").find("a").attr("href",SixthLink);  
+                $(".recc_slider_item[data-index='0']").attr("data-intro",SixthIntro);
+                $(".recc_slider_item").each(function(){
+                    thisIndex = parseInt($(this).attr("data-index"));
+
+                    if(thisIndex == length){
+                        newIndex = 0;
+                    }else {
+                        newIndex = thisIndex + 1;
+                    }
+
+                    if(thisIndex == 0) {
+                        $(this).removeClass("last");
+                    }else if(thisIndex == 5) {
+                        $(this).addClass("last");
+                    }
+
+                    if($(window).width()>991){
+                        if(thisIndex == 0) {
+                            $(this).removeClass("last");
+                        }else if(thisIndex == 5) {
+                            $(this).addClass("last");
+                        }
+                    }else if($(window).width()>575){
+                        if(thisIndex == 1) {
+                            $(this).removeClass("last");
+                        }else if(thisIndex == 4) {
+                            $(this).addClass("last");
+                        }
+                    }else {
+                        if(thisIndex == 2) {
+                            $(this).removeClass("last");
                         }else {
-                            activeIndex = activeIndex - 1;
+                            $(this).addClass("last");
                         }
                     }
-                })
-                indexUnit = indexUnit + 1;
-                $(".recc_slider_item").eq(activeIndex-1).addClass("active").siblings(".recc_slider_item").removeClass("active");
-                $(".recc_intro_item").eq(activeIndex-1).addClass("active").siblings(".recc_intro_item").removeClass("active");
+
+                    if($(this).hasClass("active")){
+                        $(this).removeClass("active");
+                    }
+
+                    $(this).attr("data-index",newIndex);
+                    deg = rotateUnit * newIndex + rotateOffset;
+                    reverse = rotateUnit * newIndex * (-1) - rotateOffset;
+                    $(this).css("transform","rotateZ(" + deg + "deg)");
+                    $(this).find(".recc_slider_img").css("transform","rotateZ(" + reverse + "deg)");
+                });
             }
+            $(".recc_slider_item[data-index='" + activeIndex + "']").addClass("active");
+            let activeIntro = $(".recc_slider_item[data-index='" + activeIndex + "']").attr("data-intro");
+            $(activeIntro).addClass("active").siblings(".recc_intro_item").removeClass("active");
+        })
+
+        // 滑鼠拖移
+        // const ReccInner = $(".recc_inner");
+        // let isPressDown = false;
+        // let cursorXSpace;
+        // ReccInner.addEventListener("mouseDown",(e) => {
+        //     isPressDown = true;
+        // })
+        var wheel = Draggable.create("#wheel", {
+            type: "rotation",
+            throwProps: true,
+            snap: function (endValue) {
+                return Math.round(0);
+            },
+            onDrag: function () {},
+            onThrowComplete: function () {
+              dragActive2();
+            },
         });
+
+        function dragActive2() {
+            let length = $(".recc_slider_item").length - 1;
+            let newIndex, thisIndex;
+            let Secondimg = $(".recc_slider_item[data-index='2']").find(".recc_slider_img").attr("src");
+            let SecondLink = $(".recc_slider_item[data-index='2']").find("a").attr("href");  
+            let SecondMark = $(".recc_slider_item[data-index='2']").find(".mark").text();  
+            $(".recc_slider_item[data-index='0']").find(".recc_slider_img").attr("src",Secondimg);
+            $(".recc_slider_item[data-index='0']").find("a").attr("href",SecondLink);  
+            $(".recc_slider_item[data-index='0']").find(".mark").text(SecondMark);
+            $(".recc_slider_item").each(function(){
+                thisIndex = parseInt($(this).attr("data-index"));
+                if(thisIndex == 0){
+                    newIndex = length;
+                }else {
+                    newIndex = thisIndex - 1;
+                }
+
+                if(thisIndex == 1) {
+                    $(this).addClass("last");
+                }else if(thisIndex == 6) {
+                    $(this).removeClass("last");
+                }
+
+                if($(this).hasClass("active")){
+                    $(this).removeClass("active");
+                }
+
+                $(this).attr("data-index",newIndex);
+                deg = rotateUnit * newIndex + rotateOffset;
+                reverse = rotateUnit * newIndex * (-1) - rotateOffset;
+                $(this).css("transform","rotateZ(" + deg + "deg)");
+                $(this).find(".recc_slider_img").css("transform","rotateZ(" + reverse + "deg)");
+            })  
+            $(".recc_slider_item[data-index='" + activeIndex + "']").addClass("active");
+        }
+
+        // function dragActive() {
+        //     var rot = wheel[0].rotation / 360;
+        //     console.log("wheel[0]=" + wheel[0] + ",rot=" + rot);
+        //     var decimal = rot % 1;
+        //     var sliderLength = $("#wheel li").length;
+        //     var tempIndex = Math.round(sliderLength * decimal);
+        //     var index;
+
+        //     if (rot < 0) {
+        //         index = Math.abs(tempIndex);
+        //     } else {
+        //         index = sliderLength - tempIndex;
+        //     }
+
+        //     if (decimal === 0) {
+        //         index = 0;
+        //     }
+
+        //     TweenMax.staggerTo(
+        //         "#wheel li.active .details > *",
+        //         0.6,
+        //         {
+        //             opacity: 0,
+        //             y: -10,
+        //         },
+        //         0.1
+        //     );
+
+        //     $("#wheel li.active").removeClass("active");
+        //     $($("#wheel li")[index]).addClass("active");
+
+        //     TweenMax.staggerTo(
+        //         "#wheel li.active .details > *",
+        //         0.6,
+        //         {
+        //             opacity: 1,
+        //             y: 0,
+        //         },
+        //         0.1
+        //     );
+        // }
+
+
         var swiperBanner = new Swiper(".banner_slider", {
             slidesPerView: 1,
             navigation: {
