@@ -223,6 +223,37 @@
     <?php include("./include/footer.php") ?>
     <?php include("./include/script.php") ?>
     <script>
+        var swiperBanner = new Swiper(".banner_slider", {
+            slidesPerView: 1,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            loop: true,
+            speed: 800,
+        });
+        var swiperNews = new Swiper(".news_slider", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            speed: 800,     
+            slidesPerGroup: 2,   
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                },
+                1200: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 3,  
+                    spaceBetween: 60,
+                }
+            }
+        });
         // 滾動
         var skrollr_obj = skrollr.init();
         // 預設
@@ -480,35 +511,5 @@
         // }
 
 
-        var swiperBanner = new Swiper(".banner_slider", {
-            slidesPerView: 1,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            loop: true,
-            speed: 800,
-        });
-        var swiperNews = new Swiper(".news_slider", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            speed: 800,     
-            slidesPerGroup: 2,   
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 2,
-                },
-                1200: {
-                    slidesPerView: 3,
-                    slidesPerGroup: 3,  
-                    spaceBetween: 60,
-                }
-            }
-        });
+        
     </script>
