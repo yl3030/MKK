@@ -61,32 +61,32 @@
                             </li>
                             <li data-index="1" data-intro="#intro1" class="recc_slider_item">
                                 <a href="">
-                                    <img class="recc_slider_img" src="./public/img/product-2.png" alt="">
+                                    <img class="recc_slider_img" src="./public/img/product-mark1.png" alt="">
                                 </a>
                             </li>
                             <li data-index="2" data-intro="#intro2" class="recc_slider_item">
                                 <a href="">
-                                    <img class="recc_slider_img" src="./public/img/product-3.png" alt="">
+                                    <img class="recc_slider_img" src="./public/img/product-mark2.png" alt="">
                                 </a>
                             </li>
                             <li data-index="3" data-intro="#intro3" class="recc_slider_item active">
                                 <a href="">
-                                    <img class="recc_slider_img" src="./public/img/product-5.png" alt="">
+                                    <img class="recc_slider_img" src="./public/img/product-mark3.png" alt="">
                                 </a>
                             </li>
                             <li data-index="4" data-intro="#intro4" class="recc_slider_item">
                                 <a href="">
-                                    <img class="recc_slider_img" src="./public/img/product-4.png" alt="">
+                                    <img class="recc_slider_img" src="./public/img/product-mark4.png" alt="">
                                 </a>
                             </li>
                             <li data-index="5" data-intro="#intro5" class="recc_slider_item">
                                 <a href="">
-                                    <img class="recc_slider_img" src="./public/img/product-1.png" alt="">
+                                    <img class="recc_slider_img" src="./public/img/product-mark5.png" alt="">
                                 </a>
                             </li>
                             <li data-index="6" data-intro="#intro6" class="recc_slider_item last">
                                 <a href="">
-                                    <img class="recc_slider_img" src="./public/img/noodle.svg" alt="">
+                                    <img class="recc_slider_img" src="./public/img/product-mark6.png" alt="">
                                 </a>
                             </li>
                             <li data-index="7" data-intro="#intro1" class="recc_slider_item last">
@@ -282,11 +282,12 @@
                 if(index == 1){
                     Firstimg = $(this).find(".recc_slider_img").attr("src");
                     FirstLink = $(this).find("a").attr("href");
-                    FirstMark = $(this).find(".mark").text();
+                    // FirstMark = $(this).find(".mark").text();
                 }
             })
             $(".recc_slider_item[data-index='7']").find(".recc_slider_img").attr("src",Firstimg);
             $(".recc_slider_item[data-index='7']").find("a").attr("href",FirstLink);
+            // $(".recc_slider_item[data-index='7']").find(".mark").text(FirstMark);
             if($(window).width()>991) {
                 $(".recc_slider_item").removeClass("last");
                 $(".recc_slider_item[data-index='0'],.recc_slider_item[data-index='6'],.recc_slider_item[data-index='7']").addClass("last");
@@ -313,9 +314,11 @@
             if($(this).hasClass("slider-arrow-next")){
                 let Secondimg = $(".recc_slider_item[data-index='2']").find(".recc_slider_img").attr("src");
                 let SecondLink = $(".recc_slider_item[data-index='2']").find("a").attr("href");  
+                // let SecondMark = $(".recc_slider_item[data-index='2']").find(".mark").text();  
                 let SecondIntro = $(".recc_slider_item[data-index='2']").attr("data-intro");
                 $(".recc_slider_item[data-index='0']").find(".recc_slider_img").attr("src",Secondimg);
-                $(".recc_slider_item[data-index='0']").find("a").attr("href",SecondLink);  
+                $(".recc_slider_item[data-index='0']").find("a").attr("href",SecondLink);
+                // $(".recc_slider_item[data-index='0']").find(".mark").text(SecondMark);
                 $(".recc_slider_item[data-index='0']").attr("data-intro",SecondIntro);
                 $(".recc_slider_item").each(function(){
                     thisIndex = parseInt($(this).attr("data-index"));
@@ -358,9 +361,11 @@
             }else if($(this).hasClass("slider-arrow-prev")){
                 let Sixthimg = $(".recc_slider_item[data-index='6']").find(".recc_slider_img").attr("src");
                 let SixthLink = $(".recc_slider_item[data-index='6']").find("a").attr("href");  
+                // let SixthMark = $(".recc_slider_item[data-index='6']").find(".mark").text();  
                 let SixthIntro = $(".recc_slider_item[data-index='6']").attr("data-intro");
                 $(".recc_slider_item[data-index='0']").find(".recc_slider_img").attr("src",Sixthimg);
                 $(".recc_slider_item[data-index='0']").find("a").attr("href",SixthLink);  
+                // $(".recc_slider_item[data-index='0']").find(".mark").text(SixthMark);
                 $(".recc_slider_item[data-index='0']").attr("data-intro",SixthIntro);
                 $(".recc_slider_item").each(function(){
                     thisIndex = parseInt($(this).attr("data-index"));
