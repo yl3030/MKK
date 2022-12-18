@@ -60,7 +60,7 @@
                                 </a>
                             </li>
                             <li data-index="1" data-intro="#intro1" class="recc_slider_item">
-                                <a href="http://www.obiz.com.tw/">
+                                <a href="">
                                     <img class="recc_slider_img" src="./public/img/product-2.png" alt="">
                                 </a>
                             </li>

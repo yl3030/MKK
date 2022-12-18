@@ -644,7 +644,6 @@ body {
   top: 0;
   left: 0;
   position: absolute;
-  pointer-events: none;
 }
 
 .recc_slider ul li img {
