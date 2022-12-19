@@ -9,4 +9,4 @@
 <link rel="stylesheet" href="./lib/css/swiper/swiper-bundle.min.css">
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.1.1/foundation.min.css"/> -->
 <!-- <link rel="stylesheet" href="https://cdn.snipcart.com/themes/base/snipcart.min.css"/> -->
-<link rel="stylesheet" href="./public/css/style.css">
+<link rel="stylesheet" href="./public/css/style.css?v=20221219">

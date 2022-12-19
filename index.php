@@ -255,14 +255,31 @@
             }
         });
         // 滾動
-        var skrollr_obj = skrollr.init();
+        // var skrollr_obj = skrollr.init();
+        // 煙霧
+        $(window).on("resize scroll",function(){
+            let headerHeight;
+            if($(window).width() <= 991){
+                headerHeight = 100;
+            }else {
+                headerHeight = 300;
+            }
+            let reccTop = $(".recc").offset().top - headerHeight;
+            if($(window).scrollTop() >= reccTop){
+                $(".smoke").addClass("active");
+            }else {
+                $(".smoke").removeClass("active");
+            }
+        })
+        
         // 預設
         let range = 80;
-        let rotateUnit = range / 6;
+        let showNum = 6;
+        let rotateUnit = 80 / 6;
         let rotateOffset = 90 - (range / 2);
         const activeIndex = 3;
         let deg, reverse;
-        let Firstimg, FirstLink, FirstMark;
+        let Firstimg, FirstLink;
         function reccSliderItem(){
             if($(window).width()>991){
                 range = 80;
@@ -282,12 +299,10 @@
                 if(index == 1){
                     Firstimg = $(this).find(".recc_slider_img").attr("src");
                     FirstLink = $(this).find("a").attr("href");
-                    // FirstMark = $(this).find(".mark").text();
                 }
             })
             $(".recc_slider_item[data-index='7']").find(".recc_slider_img").attr("src",Firstimg);
             $(".recc_slider_item[data-index='7']").find("a").attr("href",FirstLink);
-            // $(".recc_slider_item[data-index='7']").find(".mark").text(FirstMark);
             if($(window).width()>991) {
                 $(".recc_slider_item").removeClass("last");
                 $(".recc_slider_item[data-index='0'],.recc_slider_item[data-index='6'],.recc_slider_item[data-index='7']").addClass("last");
@@ -301,9 +316,7 @@
             $(".recc_slider_item[data-index='" + activeIndex + "']").addClass("active");
         };
         reccSliderItem();
-        // Range();
         $(window).on("resize scroll",function(){
-            // Range();
             reccSliderItem();
         })
 
@@ -314,11 +327,9 @@
             if($(this).hasClass("slider-arrow-next")){
                 let Secondimg = $(".recc_slider_item[data-index='2']").find(".recc_slider_img").attr("src");
                 let SecondLink = $(".recc_slider_item[data-index='2']").find("a").attr("href");  
-                // let SecondMark = $(".recc_slider_item[data-index='2']").find(".mark").text();  
                 let SecondIntro = $(".recc_slider_item[data-index='2']").attr("data-intro");
                 $(".recc_slider_item[data-index='0']").find(".recc_slider_img").attr("src",Secondimg);
                 $(".recc_slider_item[data-index='0']").find("a").attr("href",SecondLink);
-                // $(".recc_slider_item[data-index='0']").find(".mark").text(SecondMark);
                 $(".recc_slider_item[data-index='0']").attr("data-intro",SecondIntro);
                 $(".recc_slider_item").each(function(){
                     thisIndex = parseInt($(this).attr("data-index"));
@@ -417,104 +428,5 @@
             let activeIntro = $(".recc_slider_item[data-index='" + activeIndex + "']").attr("data-intro");
             $(activeIntro).addClass("active").siblings(".recc_intro_item").removeClass("active");
         })
-
-        // 滑鼠拖移
-        // const ReccInner = $(".recc_inner");
-        // let isPressDown = false;
-        // let cursorXSpace;
-        // ReccInner.addEventListener("mouseDown",(e) => {
-        //     isPressDown = true;
-        // })
-        var wheel = Draggable.create("#wheel", {
-            type: "rotation",
-            throwProps: true,
-            snap: function (endValue) {
-                return Math.round(0);
-            },
-            onDrag: function () {},
-            onThrowComplete: function () {
-              dragActive2();
-            },
-        });
-
-        function dragActive2() {
-            let length = $(".recc_slider_item").length - 1;
-            let newIndex, thisIndex;
-            let Secondimg = $(".recc_slider_item[data-index='2']").find(".recc_slider_img").attr("src");
-            let SecondLink = $(".recc_slider_item[data-index='2']").find("a").attr("href");  
-            let SecondMark = $(".recc_slider_item[data-index='2']").find(".mark").text();  
-            $(".recc_slider_item[data-index='0']").find(".recc_slider_img").attr("src",Secondimg);
-            $(".recc_slider_item[data-index='0']").find("a").attr("href",SecondLink);  
-            $(".recc_slider_item[data-index='0']").find(".mark").text(SecondMark);
-            $(".recc_slider_item").each(function(){
-                thisIndex = parseInt($(this).attr("data-index"));
-                if(thisIndex == 0){
-                    newIndex = length;
-                }else {
-                    newIndex = thisIndex - 1;
-                }
-
-                if(thisIndex == 1) {
-                    $(this).addClass("last");
-                }else if(thisIndex == 6) {
-                    $(this).removeClass("last");
-                }
-
-                if($(this).hasClass("active")){
-                    $(this).removeClass("active");
-                }
-
-                $(this).attr("data-index",newIndex);
-                deg = rotateUnit * newIndex + rotateOffset;
-                reverse = rotateUnit * newIndex * (-1) - rotateOffset;
-                $(this).css("transform","rotateZ(" + deg + "deg)");
-                $(this).find(".recc_slider_img").css("transform","rotateZ(" + reverse + "deg)");
-            })  
-            $(".recc_slider_item[data-index='" + activeIndex + "']").addClass("active");
-        }
-
-        // function dragActive() {
-        //     var rot = wheel[0].rotation / 360;
-        //     console.log("wheel[0]=" + wheel[0] + ",rot=" + rot);
-        //     var decimal = rot % 1;
-        //     var sliderLength = $("#wheel li").length;
-        //     var tempIndex = Math.round(sliderLength * decimal);
-        //     var index;
-
-        //     if (rot < 0) {
-        //         index = Math.abs(tempIndex);
-        //     } else {
-        //         index = sliderLength - tempIndex;
-        //     }
-
-        //     if (decimal === 0) {
-        //         index = 0;
-        //     }
-
-        //     TweenMax.staggerTo(
-        //         "#wheel li.active .details > *",
-        //         0.6,
-        //         {
-        //             opacity: 0,
-        //             y: -10,
-        //         },
-        //         0.1
-        //     );
-
-        //     $("#wheel li.active").removeClass("active");
-        //     $($("#wheel li")[index]).addClass("active");
-
-        //     TweenMax.staggerTo(
-        //         "#wheel li.active .details > *",
-        //         0.6,
-        //         {
-        //             opacity: 1,
-        //             y: 0,
-        //         },
-        //         0.1
-        //     );
-        // }
-
-
         
     </script>
