@@ -54,11 +54,6 @@
                 <div class="recc_slider-box">
                     <div class="recc_slider d-flex justify-content-center">
                         <ul id="wheel">
-                            <li data-index="0" data-intro="#intro2" class="recc_slider_item last">
-                                <a href="">
-                                    <img class="recc_slider_img" src="" alt="">
-                                </a>
-                            </li>
                             <li data-index="1" data-intro="#intro1" class="recc_slider_item">
                                 <a href="">
                                     <img class="recc_slider_img" src="./public/img/product-mark1.png" alt="">
@@ -84,14 +79,9 @@
                                     <img class="recc_slider_img" src="./public/img/product-mark5.png" alt="">
                                 </a>
                             </li>
-                            <li data-index="6" data-intro="#intro6" class="recc_slider_item last">
+                            <li data-index="6" data-intro="#intro6" class="recc_slider_item opa-0">
                                 <a href="">
                                     <img class="recc_slider_img" src="./public/img/product-mark6.png" alt="">
-                                </a>
-                            </li>
-                            <li data-index="7" data-intro="#intro1" class="recc_slider_item last">
-                                <a href="">
-                                    <img class="recc_slider_img" src="" alt="">
                                 </a>
                             </li>
                         </ul>
@@ -222,6 +212,7 @@
     </main>
     <?php include("./include/footer.php") ?>
     <?php include("./include/script.php") ?>
+    <script src="./public/js/round-slider.js"></script>
     <script>
         var swiperBanner = new Swiper(".banner_slider", {
             slidesPerView: 1,
@@ -271,162 +262,4 @@
                 $(".smoke").removeClass("active");
             }
         })
-        
-        // 預設
-        let range = 80;
-        let showNum = 6;
-        let rotateUnit = 80 / 6;
-        let rotateOffset = 90 - (range / 2);
-        const activeIndex = 3;
-        let deg, reverse;
-        let Firstimg, FirstLink;
-        function reccSliderItem(){
-            if($(window).width()>991){
-                range = 80;
-            }else if($(window).width()>575) {
-                range = 130;
-            }else {
-                range = 320;
-            }
-            rotateUnit = range / 6;
-            rotateOffset = 90 - (range / 2);
-            $(".recc_slider_item").each(function(){
-                let index = $(this).attr("data-index");
-                deg = rotateUnit * index + rotateOffset;
-                reverse = rotateUnit * index * (-1) - rotateOffset;
-                $(this).css("transform","rotateZ(" + deg + "deg)");
-                $(this).find(".recc_slider_img").css("transform","rotateZ(" + reverse + "deg)");
-                if(index == 1){
-                    Firstimg = $(this).find(".recc_slider_img").attr("src");
-                    FirstLink = $(this).find("a").attr("href");
-                }
-            })
-            $(".recc_slider_item[data-index='7']").find(".recc_slider_img").attr("src",Firstimg);
-            $(".recc_slider_item[data-index='7']").find("a").attr("href",FirstLink);
-            if($(window).width()>991) {
-                $(".recc_slider_item").removeClass("last");
-                $(".recc_slider_item[data-index='0'],.recc_slider_item[data-index='6'],.recc_slider_item[data-index='7']").addClass("last");
-            }else if($(window).width()>575) {
-                $(".recc_slider_item").removeClass("last");
-                $(".recc_slider_item[data-index='0'],.recc_slider_item[data-index='1'],.recc_slider_item[data-index='5'],.recc_slider_item[data-index='6'],.recc_slider_item[data-index='7']").addClass("last");
-            }else {
-                $(".recc_slider_item").addClass("last");
-                $(".recc_slider_item[data-index='" + activeIndex + "']").removeClass("last");
-            }
-            $(".recc_slider_item[data-index='" + activeIndex + "']").addClass("active");
-        };
-        reccSliderItem();
-        $(window).on("resize scroll",function(){
-            reccSliderItem();
-        })
-
-        // 點選箭頭
-        $(".slider-arrow").click(function(){
-            let length = $(".recc_slider_item").length - 1;
-            let newIndex, thisIndex;
-            if($(this).hasClass("slider-arrow-next")){
-                let Secondimg = $(".recc_slider_item[data-index='2']").find(".recc_slider_img").attr("src");
-                let SecondLink = $(".recc_slider_item[data-index='2']").find("a").attr("href");  
-                let SecondIntro = $(".recc_slider_item[data-index='2']").attr("data-intro");
-                $(".recc_slider_item[data-index='0']").find(".recc_slider_img").attr("src",Secondimg);
-                $(".recc_slider_item[data-index='0']").find("a").attr("href",SecondLink);
-                $(".recc_slider_item[data-index='0']").attr("data-intro",SecondIntro);
-                $(".recc_slider_item").each(function(){
-                    thisIndex = parseInt($(this).attr("data-index"));
-                    if(thisIndex == 0){
-                        newIndex = length;
-                    }else {
-                        newIndex = thisIndex - 1;
-                    }
-
-                    if($(window).width()>991){
-                        if(thisIndex == 1) {
-                            $(this).addClass("last");
-                        }else if(thisIndex == 6) {
-                            $(this).removeClass("last");
-                        }
-                    }else if($(window).width()>575){
-                        if(thisIndex == 2) {
-                            $(this).addClass("last");
-                        }else if(thisIndex == 5) {
-                            $(this).removeClass("last");
-                        }
-                    }else {
-                        if(thisIndex == 3) {
-                            $(this).addClass("last");
-                        }else if(thisIndex == 4) {
-                            $(this).removeClass("last");
-                        }
-                    }
-
-                    if($(this).hasClass("active")){
-                        $(this).removeClass("active");
-                    }
-
-                    $(this).attr("data-index",newIndex);
-                    deg = rotateUnit * newIndex + rotateOffset;
-                    reverse = rotateUnit * newIndex * (-1) - rotateOffset;
-                    $(this).css("transform","rotateZ(" + deg + "deg)");
-                    $(this).find(".recc_slider_img").css("transform","rotateZ(" + reverse + "deg)");
-                })  
-            }else if($(this).hasClass("slider-arrow-prev")){
-                let Sixthimg = $(".recc_slider_item[data-index='6']").find(".recc_slider_img").attr("src");
-                let SixthLink = $(".recc_slider_item[data-index='6']").find("a").attr("href");  
-                // let SixthMark = $(".recc_slider_item[data-index='6']").find(".mark").text();  
-                let SixthIntro = $(".recc_slider_item[data-index='6']").attr("data-intro");
-                $(".recc_slider_item[data-index='0']").find(".recc_slider_img").attr("src",Sixthimg);
-                $(".recc_slider_item[data-index='0']").find("a").attr("href",SixthLink);  
-                // $(".recc_slider_item[data-index='0']").find(".mark").text(SixthMark);
-                $(".recc_slider_item[data-index='0']").attr("data-intro",SixthIntro);
-                $(".recc_slider_item").each(function(){
-                    thisIndex = parseInt($(this).attr("data-index"));
-
-                    if(thisIndex == length){
-                        newIndex = 0;
-                    }else {
-                        newIndex = thisIndex + 1;
-                    }
-
-                    if(thisIndex == 0) {
-                        $(this).removeClass("last");
-                    }else if(thisIndex == 5) {
-                        $(this).addClass("last");
-                    }
-
-                    if($(window).width()>991){
-                        if(thisIndex == 0) {
-                            $(this).removeClass("last");
-                        }else if(thisIndex == 5) {
-                            $(this).addClass("last");
-                        }
-                    }else if($(window).width()>575){
-                        if(thisIndex == 1) {
-                            $(this).removeClass("last");
-                        }else if(thisIndex == 4) {
-                            $(this).addClass("last");
-                        }
-                    }else {
-                        if(thisIndex == 2) {
-                            $(this).removeClass("last");
-                        }else {
-                            $(this).addClass("last");
-                        }
-                    }
-
-                    if($(this).hasClass("active")){
-                        $(this).removeClass("active");
-                    }
-
-                    $(this).attr("data-index",newIndex);
-                    deg = rotateUnit * newIndex + rotateOffset;
-                    reverse = rotateUnit * newIndex * (-1) - rotateOffset;
-                    $(this).css("transform","rotateZ(" + deg + "deg)");
-                    $(this).find(".recc_slider_img").css("transform","rotateZ(" + reverse + "deg)");
-                });
-            }
-            $(".recc_slider_item[data-index='" + activeIndex + "']").addClass("active");
-            let activeIntro = $(".recc_slider_item[data-index='" + activeIndex + "']").attr("data-intro");
-            $(activeIntro).addClass("active").siblings(".recc_intro_item").removeClass("active");
-        })
-        
     </script>
