@@ -115,20 +115,24 @@ function reccSliderItem(){
     })
     $(".recc_slider_item[data-index='" + lastNum + "']").find(".recc_slider_img").attr("src",Firstimg);
     $(".recc_slider_item[data-index='" + lastNum + "']").find("a").attr("href",FirstLink);
-
-    if(originLength == 4) {
+    if(originLength >= 5) {
+        $(".recc_slider_item[data-index='0']").find("a").attr("href",FirstLink);
+    }else if(originLength == 4) {
         $(".recc_slider_item[data-index='6']").find(".recc_slider_img").attr("src",Secondimg);
         $(".recc_slider_item[data-index='6']").find("a").attr("href",SecondLink);
+        $(".recc_slider_item[data-index='0']").find("a").attr("href",ThirdLink);
     }else if(originLength == 3) {
         $(".recc_slider_item[data-index='5']").find(".recc_slider_img").attr("src",Secondimg);
         $(".recc_slider_item[data-index='5']").find("a").attr("href",SecondLink);
         $(".recc_slider_item[data-index='6']").find(".recc_slider_img").attr("src",Thirdimg);
         $(".recc_slider_item[data-index='6']").find("a").attr("href",ThirdLink);
+        $(".recc_slider_item[data-index='0']").find("a").attr("href",FirstLink);
     }else if(originLength == 2) {
         $(".recc_slider_item[data-index='3'],.recc_slider_item[data-index='5']").find(".recc_slider_img").attr("src",Firstimg);
         $(".recc_slider_item[data-index='3'],.recc_slider_item[data-index='5']").find("a").attr("href",FirstLink);
         $(".recc_slider_item[data-index='4'],.recc_slider_item[data-index='6']").find(".recc_slider_img").attr("src",Secondimg);
         $(".recc_slider_item[data-index='4'],.recc_slider_item[data-index='6']").find("a").attr("href",SecondLink);
+        $(".recc_slider_item[data-index='0']").find("a").attr("href",FirstLink);
     }else if(originLength == 1) {
         $(".recc_slider_item").each(function(){
             $(this).find(".recc_slider_img").attr("src",Firstimg);

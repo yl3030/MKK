@@ -55,32 +55,32 @@
                     <div class="recc_slider d-flex justify-content-center">
                         <ul id="wheel">
                             <li data-index="1" data-intro="#intro1" class="recc_slider_item">
-                                <a href="">
+                                <a href="11">
                                     <img class="recc_slider_img" src="./public/img/product-mark1.png" alt="">
                                 </a>
                             </li>
                             <li data-index="2" data-intro="#intro2" class="recc_slider_item">
-                                <a href="">
+                                <a href="22">
                                     <img class="recc_slider_img" src="./public/img/product-mark2.png" alt="">
                                 </a>
                             </li>
                             <li data-index="3" data-intro="#intro3" class="recc_slider_item active">
-                                <a href="">
+                                <a href="33">
                                     <img class="recc_slider_img" src="./public/img/product-mark3.png" alt="">
                                 </a>
                             </li>
                             <li data-index="4" data-intro="#intro4" class="recc_slider_item">
-                                <a href="">
+                                <a href="44">
                                     <img class="recc_slider_img" src="./public/img/product-mark4.png" alt="">
                                 </a>
                             </li>
                             <li data-index="5" data-intro="#intro5" class="recc_slider_item">
-                                <a href="">
+                                <a href="55">
                                     <img class="recc_slider_img" src="./public/img/product-mark5.png" alt="">
                                 </a>
                             </li>
                             <li data-index="6" data-intro="#intro6" class="recc_slider_item opa-0">
-                                <a href="">
+                                <a href="66">
                                     <img class="recc_slider_img" src="./public/img/product-mark6.png" alt="">
                                 </a>
                             </li>
