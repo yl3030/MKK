@@ -317,3 +317,7 @@ reccInner.addEventListener("mouseup", (e) => {
         slideLeft(length, newIndex, thisIndex);
     }
 })
+
+$(".recc_slider_item>div").click(function(){
+    window.open();
+})
