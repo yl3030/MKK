@@ -8,7 +8,9 @@
 $main-blue: #122C52;
 $second-blue: #132C53;
 $third-blue: #0E2C50;
+$forth-blue: #0F2C51;
 $main-gray: #DCDDDD;
+$main-black: #231815;
 $white: #fff;
 $notosansTC: 'Noto Sans TC', sans-serif;
 $CenturyGothic:  "Century Gothic", sans-serif;
@@ -114,6 +116,26 @@ textarea {
             height: 100%;
             li {
                 margin: 0 35px;
+                a {
+                    position: relative;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        // width: 100%;
+                        width: 0;
+                        height: 1px;
+                        background-color: $main-blue;
+                        left: 50%;
+                        bottom: -10px;
+                        transform: translateX(-50%);
+                        transition: $transition-common;
+                    }
+                    &:hover, &.active {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
         &_space {
@@ -368,6 +390,27 @@ main {
             }
         }
     }
+    &-join {
+        position: fixed;
+        z-index: 5;
+        right: 40px;
+        top: 250px;
+        a {
+            width: 45px;
+            display: block;
+            margin-bottom: 25px;
+            // padding: 5px 3px;
+            transition: $transition-common;
+            // border: 1px solid transparent;
+            img {
+                width: 100%;
+            }
+            &:hover {
+                // border-color: $main-blue;
+                transform: scale(1.1);
+            }
+        }
+    }
     @media screen and (max-width: 575px) {
         right: 20px;
         a {
@@ -379,22 +422,34 @@ main {
                 }
             }
         }
+        &-join {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
 }
 
 .banner-page {
     width: 100%;
-    padding-bottom: 30%;
+    // padding-bottom: 30%;
     position: relative;
     img {
-        position: absolute;
+        // position: absolute;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0;
-        left: 0;
+        // height: 100%;
+        // object-fit: cover;
+        // top: 0;
+        // left: 0;
     }
     @media screen and (max-width: 767px) {
-        padding-bottom: 60%;
+        // padding-bottom: 60%;
+    }
+}
+
+.innerPage {
+    padding-top: 96px;
+    @media screen and (max-width: 767px) {
+        padding-top: 48px;
     }
 }

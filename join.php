@@ -1,3 +1,6 @@
+<?php
+    $pageName = "join";
+?>
 <!DOCTYPE html>
 <html lang="zh">
 <head>

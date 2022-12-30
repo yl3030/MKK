@@ -33,6 +33,5 @@
             </ul>
         </div>
     </div>
-    <!-- <div class="footer_bottom"></div> -->
 </footer>
 

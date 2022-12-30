@@ -1,3 +1,6 @@
+<?php
+    $pageName = "home";
+?>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
