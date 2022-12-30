@@ -86,7 +86,7 @@
                             </div>
                             <div class="store_name">
                                 <h3>捷運景美店</h3>
-                                <div class="store_name_copy btnCopy">
+                                <div class="store_name_copy">
                                     <span>複製地址</span>
                                     <img src="./public/img/icon-copy.svg" alt="">
                                 </div>
@@ -108,4 +108,27 @@
     </main>
     <?php include("./include/footer.php") ?>
     <?php include("./include/script.php") ?>
+
+    <script>
+        $(".store_name_copy").each(function(){
+            this.addEventListener('click', function(){
+                const range = document.createRange();
+                // 將指定元素內容加到 Range 中
+                const texts = this.parentElement.nextElementSibling.lastChild;
+                range.selectNode(texts);
+                // 取得 Selection 物件
+                const selection = window.getSelection();
+                // 先清空當前選取範圍
+                selection.removeAllRanges();
+                // 加入 Range 
+                selection.addRange(range);
+  
+                document.execCommand('copy');
+                selection.removeAllRanges();
+
+            })
+            // $(this).click(function){
+            // }
+        })
+    </script>
 </body>
