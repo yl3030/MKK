@@ -1,22 +1,7 @@
 <footer class="footer">
-    <div class="container d-flex align-items-center justify-content-center flex-wrap">
-        <a href="./index.html" class="footer_logo"><img src="./public/img/logo-footer.svg" alt=""></a>
-        <div class="footer_list">
-            <nav class="footer_nav">
-                <ul>
-                    <li><a href="">聯絡我們</a></li>
-                    <li><a href="">網站地圖</a></li>
-                    <li><a href="">麵匡匡隱私權保護聲明</a></li>
-                </ul>
-            </nav>
-            <ul class="footer_social">
-                <li><a href=""><img src="./public/img/fb.svg" alt=""></a></li>
-                <li><a href=""><img src="./public/img/ig.svg" alt=""></a></li>
-                <li><a href=""><img src="./public/img/line.svg" alt=""></a></li>
-            </ul>
-        </div>
-        <div class="footer_inform">
-            <img class="footer_inform_brand" src="./public/img/wube.svg" alt="">
+    <div class="container">
+        <div class="footer_inform d-md-flex align-items-center justify-content-between">
+            <div class="footer_inform_brand mb-md-0 mb-4"><img src="./public/img/wube.svg" alt=""></div>
             <ul>
                 <li>
                     <img src="./public/img/icon-place.svg" alt="">
@@ -31,6 +16,30 @@
                     <span>總部服務時間：週一至週五 09:00～18:00</span>
                 </li>
             </ul>
+        </div>
+        <p class="footer_intro">123123</p>
+        <div class="footer_brand">
+            <h3>旗下品牌</h3>
+            <div class="footer_brand_content">
+                <div class="footer_brand_pic"><img src="./public/img/brand-1.png" alt=""></div>
+                <div class="footer_brand_pic"><img src="./public/img/brand-2.png" alt=""></div>
+                <div class="footer_brand_pic"><img src="./public/img/brand-3.png" alt=""></div>
+            </div>
+        </div>
+        <div class="d-sm-flex align-items-center">
+            <ul class="footer_social">
+                <li><a href=""><img src="./public/img/fb.svg" alt=""></a></li>
+                <li><a href=""><img src="./public/img/ig.svg" alt=""></a></li>
+                <li><a href=""><img src="./public/img/line.svg" alt=""></a></li>
+            </ul>
+            <nav class="footer_nav ps-sm-3 ps-0 mt-sm-0 mt-4">
+                <ul>
+                    <li class="mb-2"><a href="">聯絡我們</a></li>
+                    <li class="mb-2"><a href="">加盟主專區</a></li><br>
+                    <li><a href="">網站地圖</a></li>
+                    <li><a href="">麵匡匡隱私權保護聲明</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
 </footer>

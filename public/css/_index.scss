@@ -37,27 +37,7 @@ body {
     }
 }
 
-.title {
-    margin-bottom: 35px;
-    img {
-        width: 175px;
-        display: block;
-        margin: 0 auto 8px;
-    }
-    h2 {
-        font-size: 16px;
-        font-family: $CenturyGothic;
-        text-align: center;
-        margin: 0;
-        color: $second-blue;
-        letter-spacing: 0;
-    }
-    @media screen and (max-width: 450px) {
-        img {
-            width: 130px;
-        }
-    }
-}
+
 
 .home-about {
     padding: 55px 0 90px;

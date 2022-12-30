@@ -28,9 +28,11 @@
         <div class="header_mask"></div>
         <nav class="header_nav">
             <ul class="d-flex align-items-center justify-content-center">
-                <li><a href="">關於我們</a></li>
-                <li><a href="./news.php" <?php if($pageName == "news") echo "class='active'" ?>>門市資訊</a></li>
+                <li><a href="./about.php" <?php if($pageName == "about") echo "class='active'" ?>>關於我們</a></li>
+                <li><a href="./menu.php" <?php if($pageName == "menu") echo "class='active'" ?>>美味餐點</a></li>
+                <li><a href="./news.php" <?php if($pageName == "news") echo "class='active'" ?>>最新消息</a></li>
                 <li class="header_nav_space"><a href=""></a></li>
+                <li><a href="./store.php" <?php if($pageName == "store") echo "class='active'" ?>>門市資訊</a></li>
                 <li><a href="./recruit.php" <?php if($pageName == "recruit") echo "class='active'" ?>>人才招募</a></li>
                 <li><a href="./join.php" <?php if($pageName == "join") echo "class='active'" ?>>我要加盟</a></li>
             </ul>

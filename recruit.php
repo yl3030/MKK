@@ -84,26 +84,100 @@
                 </div>
             </div>
 
-            <!-- <div class="recruit_joinus">
+            <div class="recruit_joinus">
                 <div class="title">
                     <img src="./public/img/title-joinUs.svg" alt="門市職缺">
                     <h2>join us</h2>
                 </div>
-                <div class="recruit_select">
+                <div class="recruit_select-box">
                     <label for="">選擇區域</label>
-                    <div class="join_class_form_select">
-                        <div class="join_class_form_select_active">
-                            <span>下拉選擇場次</span>
-                            <img src="./public/img/select-arrow.svg" alt="">
+                    <div class="recruit_select select-common">
+                        <div class="recruit_select_active select-common_active">
+                            <span>雙北地區</span>
+                            <img src="./public/img/select-triangle.svg" alt="">
                         </div>
-                        <ul class="join_class_form_select_list">
-                            <li>第一場</li>
-                            <li>第二場</li>
-                            <li>第三場</li>
+                        <ul class="recruit_select_list select-common_list">
+                            <li class="active">雙北地區</li>
+                            <li>桃竹苗</li>
+                            <li>中部</li>
+                            <li>南部</li>
+                            <li>東部</li>
+                            <li>離島</li>
                         </ul>
                     </div>
                 </div>
-            </div> -->
+                <div class="container">
+                    <div class="row recruit_joinus_content">
+                        <div class="col-lg-4 col-6">
+                            <div class="recruit_joinus_item">
+                                <div class="recruit_joinus_pic">
+                                    <img src="./public/img/shop-1.png" alt="">
+                                </div>
+                                <div class="recruit_joinus_inform">
+                                    <div class="recruit_joinus_name">
+                                        <h3>捷運景美店</h3>
+                                        <img src="./public/img/icon-pin.png" alt="">
+                                    </div>
+                                    <ul>
+                                        <li>地址：台北市文山區景文街21號</li>
+                                        <li>電話：02-89313001</li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4"><a class="recruit_joinus_job" href="">主管</a></div>
+                                    <div class="col-4"><a class="recruit_joinus_job invalid" href="">正職</a></div>
+                                    <div class="col-4"><a class="recruit_joinus_job" href="">計時</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <div class="recruit_joinus_item">
+                                <div class="recruit_joinus_pic">
+                                    <img src="./public/img/shop-2.png" alt="">
+                                </div>
+                                <div class="recruit_joinus_inform">
+                                    <div class="recruit_joinus_name">
+                                        <h3>內湖金湖店</h3>
+                                        <img src="./public/img/icon-pin.png" alt="">
+                                    </div>
+                                    <ul>
+                                        <li>地址：台北市內湖區金湖路396號</li>
+                                        <li>電話：02-26330005</li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4"><a class="recruit_joinus_job invalid" href="">主管</a></div>
+                                    <div class="col-4"><a class="recruit_joinus_job" href="">正職</a></div>
+                                    <div class="col-4"><a class="recruit_joinus_job" href="">計時</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-6">
+                            <div class="recruit_joinus_item">
+                                <div class="recruit_joinus_pic">
+                                    <img src="./public/img/shop-3.png" alt="">
+                                </div>
+                                <div class="recruit_joinus_inform">
+                                    <div class="recruit_joinus_name">
+                                        <h3>台北莊敬店</h3>
+                                        <img src="./public/img/icon-pin.png" alt="">
+                                    </div>
+                                    <ul>
+                                        <li>地址：台北市信義區莊敬路410號</li>
+                                        <li>電話：02-27852585</li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4"><a class="recruit_joinus_job invalid" href="">主管</a></div>
+                                    <div class="col-4"><a class="recruit_joinus_job" href="">正職</a></div>
+                                    <div class="col-4"><a class="recruit_joinus_job" href="">計時</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
         
@@ -113,4 +187,12 @@
     </main>
     <?php include("./include/footer.php") ?>
     <?php include("./include/script.php") ?>
+
+    <script>
+        $(".recruit_joinus_job").each(function(){
+            if($(this).hasClass("invalid")){
+                $(this).removeAttr("href");
+            }
+        })
+    </script>
 </body>

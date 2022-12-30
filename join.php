@@ -215,12 +215,12 @@
                             <div class="join_class_form_left">
                                 <div class="join_class_form_item way">
                                     <label for="">收件方式</label>
-                                    <div class="join_class_form_select">
-                                        <div class="join_class_form_select_active">
+                                    <div class="join_class_form_select select-common">
+                                        <div class="join_class_form_select_active select-common_active">
                                             <span>請選擇</span>
                                             <img src="./public/img/select-arrow.svg" alt="">
                                         </div>
-                                        <ul class="join_class_form_select_list">
+                                        <ul class="join_class_form_select_list select-common_list">
                                             <li>LINE 請於右方填寫ID</li>
                                             <li>Email 請於右方填寫</li>
                                         </ul>
@@ -237,12 +237,12 @@
                             <div class="join_class_form_left">
                                 <div class="join_class_form_item number">
                                     <label for="">出席人數</label>
-                                    <div class="join_class_form_select">
-                                        <div class="join_class_form_select_active">
+                                    <div class="join_class_form_select select-common">
+                                        <div class="join_class_form_select_active  select-common_active">
                                             <span>請選擇</span>
                                             <img src="./public/img/select-arrow.svg" alt="">
                                         </div>
-                                        <ul class="join_class_form_select_list">
+                                        <ul class="join_class_form_select_list select-common_list">
                                             <li>1 位</li>
                                             <li>2 位</li>
                                         </ul>
@@ -253,12 +253,12 @@
                             <div class="join_class_form_right">
                                 <div class="join_class_form_item time">
                                     <label for="">方便連絡時間</label>
-                                    <div class="join_class_form_select">
-                                        <div class="join_class_form_select_active">
+                                    <div class="join_class_form_select select-common">
+                                        <div class="join_class_form_select_active select-common_active">
                                             <span>請選擇</span>
                                             <img src="./public/img/select-arrow.svg" alt="">
                                         </div>
-                                        <ul class="join_class_form_select_list">
+                                        <ul class="join_class_form_select_list select-common_list">
                                             <li>早上</li>
                                             <li>中午</li>
                                             <li>晚上</li>
@@ -269,12 +269,12 @@
                             <div class="join_class_form_full">
                                 <div class="join_class_form_item session">
                                     <label for="">申請場次</label>
-                                    <div class="join_class_form_select">
-                                        <div class="join_class_form_select_active">
+                                    <div class="join_class_form_select select-common">
+                                        <div class="join_class_form_select_active select-common_active">
                                             <span>下拉選擇場次</span>
                                             <img src="./public/img/select-arrow.svg" alt="">
                                         </div>
-                                        <ul class="join_class_form_select_list">
+                                        <ul class="join_class_form_select_list select-common_list">
                                             <li>第一場</li>
                                             <li>第二場</li>
                                             <li>第三場</li>
@@ -493,21 +493,7 @@
             }
         })
 
-        $(".join_class_form_select_active").click(function(){
-            $(this).parents(".join_class_form_select").find(".join_class_form_select_list").slideToggle(300);
-        })
-        $(".join_class_form_select_list li").click(function(){
-            let select = $(this).text();
-            console.log(select);
-            $(this).parents(".join_class_form_select").find(".join_class_form_select_active span").text(select);
-            $(this).parents(".join_class_form_select").find(".join_class_form_select_list").slideUp(300);
-        })
-        $(document).click(function (event) {
-            var selectArea = $(".join_class_form_select");
-            if (!selectArea.is(event.target) && selectArea.has(event.target).length === 0) {
-                $(".join_class_form_select_list").slideUp(300);
-            }
-        });
+        
         var swiper = new Swiper(".join_advantage_slider", {
             slidesPerView: 2,
             spaceBetween: 25,
