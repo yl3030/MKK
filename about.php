@@ -30,11 +30,33 @@
                                     <img class="person" src="./public/img/character-1.svg" alt="">
                                     <img class="say" src="./public/img/say.svg" alt="">
                                 </div>
+                                <div class="about_character_text">
+                                    <div class="inner">
+                                        <img class="about_character_title" src="./public/img/character-slogan-v2.svg" alt="">
+                                        <ul>
+                                            <li>暱稱：爆子頭 阿良</li>
+                                            <li>出身：台灣鄉下</li>
+                                            <li>生日：9/6 處女座(目前26歲)</li>
+                                            <li>興趣：美食和交朋友</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="about_character_pic">
                                     <img class="person" src="./public/img/character-2.svg" alt="">
                                     <img class="say" src="./public/img/say.svg" alt="">
+                                </div>
+                                <div class="about_character_text">
+                                    <div class="inner">
+                                        <img class="about_character_title" src="./public/img/character-slogan-v2.svg" alt="">
+                                        <ul>
+                                            <li>暱稱：爆子頭 阿良</li>
+                                            <li>出身：台灣城市</li>
+                                            <li>生日：10/6 天秤座(目前26歲)</li>
+                                            <li>興趣：美食和交朋友</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
@@ -42,10 +64,21 @@
                                     <img class="person" src="./public/img/character-3.svg" alt="">
                                     <img class="say" src="./public/img/say.svg" alt="">
                                 </div>
+                                <div class="about_character_text">
+                                    <div class="inner">
+                                        <img class="about_character_title" src="./public/img/character-slogan-v2.svg" alt="">
+                                        <ul>
+                                            <li>暱稱：爆子頭 阿良</li>
+                                            <li>出身：台灣漁村</li>
+                                            <li>生日：11/6 天蠍座(目前26歲)</li>
+                                            <li>興趣：美食和交朋友</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>     
+                        </div>    
                     </div>
-                    <div class="swiper-container characterText">
+                    <!-- <div class="swiper-container characterText">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="about_character_text">
@@ -89,7 +122,9 @@
                         </div>     
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
-                    </div>
+                    </div> -->
+                    <div class="swiper-button-next character_arrow"></div>
+                    <div class="swiper-button-prev character_arrow"></div> 
                 </div>
             </div>
             
@@ -112,7 +147,7 @@
             spaceBetween: 20,
             centeredSlides: true,
             loop: true,
-            allowTouchMove: false,
+            // allowTouchMove: false,
             speed: 800,
             navigation: {
                 nextEl: ".swiper-button-next",
@@ -129,22 +164,44 @@
                 },
             },
         });
-        var swiperText = new Swiper(".characterText", {
-            slidesPerView: 1,
-            loop: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            thumbs: {
-                swiper: swiperPic,
-            },
-            effect: "fade",
-            speed: 800,
-            fadeEffect: {
-                crossFade: true,
-            },
-        });
+        // var swiperText = new Swiper(".characterText", {
+        //     slidesPerView: 1,
+        //     loop: true,
+        //     navigation: {
+        //         nextEl: ".swiper-button-next",
+        //         prevEl: ".swiper-button-prev",
+        //     },
+        //     thumbs: {
+        //         swiper: swiperPic,
+        //     },
+        //     effect: "fade",
+        //     speed: 800,
+        //     fadeEffect: {
+        //         crossFade: true,
+        //     },
+        // });
+
+        function characterIntro() {
+            let introHeight_max, introHeight_prev = 0;
+            $(".about_character_text").each(function(){
+                let introHeight = $(this).height();
+                console.log("introHeight=" + introHeight);
+                if(introHeight > introHeight_prev) {
+                    introHeight_max = introHeight;
+                }else {
+                    introHeight_prev = introHeight;
+                }
+            })
+            introHeight_max = introHeight_max + 24;
+            $(".characterPic").css("padding-bottom","calc(55px + " + introHeight_max + "px)");
+            $(".character_arrow").each(function(){
+                $(this).css("bottom","calc(" + introHeight_max + "px / 2)");
+            })
+        }
+        characterIntro();
+        $(window).on("resize scroll",function(){
+            characterIntro();
+        })
     </script>
     
 </body>

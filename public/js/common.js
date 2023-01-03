@@ -4,6 +4,14 @@ $(".header_menu").click(function(){
     $(".header_mask, .header_nav").fadeToggle(300);
 })
 
+$(window).on("resize scroll",function(){
+    if($(window).width() > 991) {
+        $(".header_nav").show();
+    }else {
+        $(".header_nav").hide();
+    }
+})
+
 // top
 $(".btn-top").click(function(){
     $("html, body").animate({scrollTop: 0}, 300);
