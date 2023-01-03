@@ -123,8 +123,8 @@
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div> -->
-                    <div class="swiper-button-next character_arrow"></div>
-                    <div class="swiper-button-prev character_arrow"></div> 
+                    <div class="swiper-button-next character_arrow" id="character_arrow_next"></div>
+                    <div class="swiper-button-prev character_arrow" id="character_arrow_prev"></div> 
                 </div>
             </div>
             
@@ -150,8 +150,8 @@
             // allowTouchMove: false,
             speed: 800,
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: "#character_arrow_next",
+                prevEl: "#character_arrow_prev",
             },
             breakpoints: {
                 600: {
