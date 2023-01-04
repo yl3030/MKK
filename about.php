@@ -185,8 +185,7 @@
             let introHeight_max, introHeight_prev = 0;
             $(".about_character_text").each(function(){
                 let introHeight = $(this).height();
-                console.log("introHeight=" + introHeight);
-                if(introHeight > introHeight_prev) {
+                if(introHeight > introHeight_max) {
                     introHeight_max = introHeight;
                 }else {
                     introHeight_prev = introHeight;

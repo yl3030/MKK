@@ -216,7 +216,8 @@ textarea {
             top: 70px;
             width: 100vw;
             left: 0;
-            height: fit-content;
+            // height: fit-content;
+            height: auto;
             z-index: 1;
             background-color: $white;
             border-top: 1px solid $main-gray;

@@ -232,9 +232,7 @@ textarea {
     top: 70px;
     width: 100vw;
     left: 0;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: auto;
     z-index: 1;
     background-color: #fff;
     border-top: 1px solid #DCDDDD;
@@ -3808,7 +3806,7 @@ body {
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   margin: 0;
-  z-index: 0;
+  z-index: 1;
 }
 
 .about_character .swiper-button-next::after, .about_character .swiper-button-prev::after {
