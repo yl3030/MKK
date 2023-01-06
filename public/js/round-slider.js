@@ -303,6 +303,9 @@ let cursorXFrom, cursorXTo;
 reccInner.addEventListener("mousedown", (e) => {
     isPressDown = true;
     cursorXFrom = e.offsetX;
+    // $(".recc_slider_item").each(function(){
+    //     $(this).find("a").css("pointer-events","auto");
+    // })
 })
 
 reccInner.addEventListener("mouseup", (e) => {
@@ -315,7 +318,18 @@ reccInner.addEventListener("mouseup", (e) => {
         slideRight(length, newIndex, thisIndex);
     }else if (dragDistance < 0) {
         slideLeft(length, newIndex, thisIndex);
+    }else if (dragDistance == 0) {
+        let link = 
     }
+    // if(dragDistance == 0) {
+    //     $(".recc_slider_item").each(function(){
+    //         $(this).find("a").css("pointer-events","auto");
+    //     })
+    // }else {
+    //     $(".recc_slider_item").each(function(){
+    //         $(this).find("a").css("pointer-events","none");
+    //     })
+    // }
 })
 
 $(".recc_slider_item>div").click(function(){

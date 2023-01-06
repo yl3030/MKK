@@ -72,6 +72,7 @@
                                             <li>出身：台灣漁村</li>
                                             <li>生日：11/6 天蠍座(目前26歲)</li>
                                             <li>興趣：美食和交朋友</li>
+                                            <li>生日：11/6 天蠍座(目前26歲)</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -164,25 +165,9 @@
                 },
             },
         });
-        // var swiperText = new Swiper(".characterText", {
-        //     slidesPerView: 1,
-        //     loop: true,
-        //     navigation: {
-        //         nextEl: ".swiper-button-next",
-        //         prevEl: ".swiper-button-prev",
-        //     },
-        //     thumbs: {
-        //         swiper: swiperPic,
-        //     },
-        //     effect: "fade",
-        //     speed: 800,
-        //     fadeEffect: {
-        //         crossFade: true,
-        //     },
-        // });
 
         function characterIntro() {
-            let introHeight_max, introHeight_prev = 0;
+            let introHeight_max = 0, introHeight_prev = 0;
             $(".about_character_text").each(function(){
                 let introHeight = $(this).height();
                 if(introHeight > introHeight_max) {
